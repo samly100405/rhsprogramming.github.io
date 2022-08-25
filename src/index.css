@@ -60,7 +60,7 @@ body{
   margin: 50px 15%;
   font-style: italic;
 
-  animation: descEnter 1s ease 1s 1 normal forwards;
+  animation: descEnter 1s ease .75s 1 normal forwards;
 }
 .desc > p {
   margin: 0px;
@@ -72,7 +72,7 @@ body{
 	}
 
 	100% {
-		opacity: 1;
+		opacity: .75;
 	}
 }
 
@@ -81,6 +81,7 @@ body{
   margin:200px 15%;
   padding: 16px;
   border-left: 2px solid white;
+  background-color: rgba(0, 0, 0, 0.3);
   /* border-bottom: 2px solid white; */
 }
 
