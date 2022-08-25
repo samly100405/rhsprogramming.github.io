@@ -1,32 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import TitleSection from "./components/TitleSection"
+import Section from "./components/Section"
+import sectionsData from './assets/data/sections-data'
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const sections = sectionsData.map(
+    d => {
+      return <Section key={d.text} title={d.title} text={d.text}/>
+    }
+  )
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <TitleSection />
+      <div className="desc">
+        <p>Scroll down for more info</p>
+        <p style={{fontSize: 30}}>↓</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {sections}
     </div>
   )
 }
